@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-//inicia 11:00
+
 class Botao extends Component {
   constructor(props) {
     super(props);
@@ -10,6 +10,10 @@ class Botao extends Component {
     if (props.c) {
       c = parseInt(props.c);
     }
+    let bg = '#E0E0E0';
+    if (props.bg) {
+      bg = props.bg;
+    }
 
     this.styles = StyleSheet.create({
       area: {
@@ -18,7 +22,7 @@ class Botao extends Component {
         alignItems: 'center',
         borderWidth: 1,
         borderColor: '#999999',
-        backgroundColor: '#E0E0E0'
+        backgroundColor: bg
       },
       text: {
         fontSize: 18
@@ -28,7 +32,7 @@ class Botao extends Component {
   render() {
     return (
       <TouchableOpacity style={this.styles.area}>
-        <Text style={this.styles.text}></Text>
+        <Text style={this.styles.text}>{this.props.n}</Text>
       </TouchableOpacity>
 
     );
@@ -36,33 +40,42 @@ class Botao extends Component {
 }
 
 export default class Calculadora extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { r: '0' };
+  }
   render() {
     return (
       <View style={styles.body}>
         <View style={styles.linha}>
-          <Text></Text>
+          <Text style={styles.res}>{this.state.r}</Text>
         </View>
         <View style={styles.linha}>
-          <Botao c="2" />
-          <Botao />
+          <Botao c="3" n="C" bg="#CCCCCC" />
+          <Botao n="/" bg="#FD9536" />
         </View>
         <View style={styles.linha}>
-          <Botao />
-          <Botao />
-          <Botao />
-          <Botao />
+          <Botao n="7" />
+          <Botao n="8" />
+          <Botao n="9" />
+          <Botao n="*" bg="#FD9536" />
         </View>
         <View style={styles.linha}>
-          <Botao />
-          <Botao />
-          <Botao />
-          <Botao />
+          <Botao n="4" />
+          <Botao n="5" />
+          <Botao n="6" />
+          <Botao n="-" bg="#FD9536" />
         </View>
         <View style={styles.linha}>
-          <Botao />
-          <Botao />
-          <Botao />
-          <Botao />
+          <Botao n="1" />
+          <Botao n="2" />
+          <Botao n="3" />
+          <Botao n="+" bg="#FD9536" />
+        </View>
+        <View style={styles.linha}>
+          <Botao c="2" n="0" />
+          <Botao n="." />
+          <Botao n="=" bg="#FD9536" />
         </View>
       </View>
     );
@@ -76,6 +89,14 @@ const styles = StyleSheet.create({
   linha: {
     flex: 1,
     flexDirection: 'row',
+
+  },
+  res: {
+    backgroundColor: '#000000',
+    color: '#FFFFFF',
+    fontSize: 50,
+    flex: 1,
+    textAlign: 'right'
 
   }
 
