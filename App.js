@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
   res: {
     backgroundColor: '#000000',
     color: '#FFFFFF',
-    fontSize: 50,
+    fontSize: 60,
     flex: 1,
     textAlign: 'right'
 
