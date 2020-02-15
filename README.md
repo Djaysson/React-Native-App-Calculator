@@ -1,4 +1,4 @@
-# Calculator-React-Native
+# Calculadora-React-Native
 
 <p>Esse projeto consiste em fazer a calculadora do iphone</p>
 
