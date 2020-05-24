@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
 import Botao from './ButtonCalculator';
 
@@ -39,6 +39,20 @@ export default class Calculadora extends Component {
             bg="#CCCCCC"
             onPress={() => {
               this.btn('C');
+            }}
+          />
+          <Botao
+            n="+/-"
+            bg="#FD9536"
+            onPress={() => {
+              this.btn('+/-');
+            }}
+          />
+          <Botao
+            n="%"
+            bg="#FD9536"
+            onPress={() => {
+              this.btn('%');
             }}
           />
           <Botao
@@ -131,13 +145,18 @@ export default class Calculadora extends Component {
           />
         </View>
         <View style={styles.linha}>
-          <Botao
-            c="2"
-            n="0"
-            onPress={() => {
-              this.btn('0');
-            }}
-          />
+
+          <View style={styles.linhab}>
+              <Botao
+                c="2"
+                n="0"
+                onPress={() => {
+                  this.btn('0');
+                }}
+              />
+
+          </View>
+
           <Botao
             n="."
             onPress={() => {
@@ -162,6 +181,10 @@ const styles = StyleSheet.create({
   },
   linha: {
     flex: 1,
+    flexDirection: 'row',
+  },
+  linhab: {
+    flex: 2,
     flexDirection: 'row',
   },
   res: {
