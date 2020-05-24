@@ -21,4 +21,4 @@ Assim que o processo terminar, automaticamente será aberto no seu emulador andr
 
 ## App
 
-<img align="center" src=""></img>
+<img align="center" src="https://github.com/Djaysson/Calculator-React-Native/blob/master/assets/imgApp.gif"></img>
